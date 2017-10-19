@@ -20,4 +20,5 @@
              ["src/common/{{sanitized}}/common/core.cljc" (render "src/common/proj/common/core.cljc" data)]
              ["src/back/{{sanitized}}/core.clj" (render "src/back/proj/core.clj" data)]
              ["src/front/{{sanitized}}/core.cljs" (render "src/front/proj/core.cljs" data)]
+             ["README.md" (render "README.md" data)]
              ["project.clj" (render "project.clj" data)])))

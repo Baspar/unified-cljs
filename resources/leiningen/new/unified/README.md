@@ -1,4 +1,4 @@
-# Unified Template
+# Unified Template for {{name}} Project
 ## Prerequisites
 - [Leiningen](https://leiningen.org): Tool for a peaceful Clojure(Script) environment.
 - [PhantomJS](http://phantomjs.org): Javascript library for Unit Testing. Used for Frontend Unit Testing.

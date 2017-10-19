@@ -1,11 +1,12 @@
 # unified
 
-A Leiningen template for FIXME.
+A Leiningen template for a unified Frontend and Backend developpement.
 
 ## Usage
 
-FIXME
-
+```bash
+lein new unified your-project-name
+```
 ## License
 
 Copyright © 2017 FIXME

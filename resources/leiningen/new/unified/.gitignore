@@ -1,0 +1,6 @@
+.lein-failures
+.*.swp
+*.log
+target
+resources/front/test
+resources/front/public/js/compiled

@@ -10,7 +10,11 @@
 
   ;; Common dependencies
   :dependencies [[org.clojure/clojure "1.8.0"]
-                 [lein-doo "0.1.7"]]
+                 [lein-doo "0.1.7"]
+                 ;; HTTP Requests
+                 [io.nervous/kvlt "0.1.4"]
+                 ;; CSP in Clojure(Script)
+                 [org.clojure/core.async "0.3.443"]]
 
   ;; Common plugins
   :plugins [[lein-doo "0.1.7"]]

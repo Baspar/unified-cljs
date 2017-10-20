@@ -4,7 +4,7 @@
   :min-lein-version "2.0.0"
 
   ;; Clean
-  :clean-targets ^{:protect false} ["resources/front/public/js/"
+  :clean-targets ^{:protect false} ["resources/public/js/"
                                     "target/"
                                     "*.log"]
 
@@ -22,7 +22,7 @@
   ;; Common paths
   :source-paths ["src/common"]
   :test-paths ["test/common"]
-  :resource-paths []
+  :resource-paths ["resources"]
 
   ;; Aliases
   :aliases {;; Dev
@@ -45,24 +45,24 @@
                                              :open-urls ["http://localhost:3449/cards.html"]}
                                   :compiler {:main       "{{name}}.core"
                                              :asset-path "js/compiled/devcards_out"
-                                             :output-to  "resources/front/public/js/compiled/{{sanitized}}_devcards.js"
-                                             :output-dir "resources/front/public/js/compiled/devcards_out"
+                                             :output-to  "resources/public/js/compiled/{{sanitized}}_devcards.js"
+                                             :output-dir "resources/public/js/compiled/devcards_out"
                                              :source-map-timestamp true }}
                        :dev {:source-paths ["src/front" "src/common"]
                              :figwheel true
                              :compiler {:main       "{{name}}.core"
                                         :asset-path "js/compiled/out"
-                                        :output-to  "resources/front/public/js/compiled/{{sanitized}}.js"
-                                        :output-dir "resources/front/public/js/compiled/out"
+                                        :output-to  "resources/public/js/compiled/{{sanitized}}.js"
+                                        :output-dir "resources/public/js/compiled/out"
                                         :source-map-timestamp true }}
                        :prod {:source-paths ["src/front" "src/common"]
                               :compiler {:main       "{{name}}.core"
                                          :asset-path "js/compiled/out"
-                                         :output-to  "resources/front/public/js/compiled/{{sanitized}}.js"
+                                         :output-to  "resources/public/js/compiled/{{sanitized}}.js"
                                          :optimizations :advanced}}
                        :test {:source-paths ["src/front" "src/common" "test/front" "test/common"]
-                              :compiler {:output-to "resources/front/test/compiled.js"
-                                         :output-dir "resources/front/test/out"
+                              :compiler {:output-to "resources/test/compiled.js"
+                                         :output-dir "resources/test/out"
                                          :pretty-print true
                                          :main test.core
                                          :optimizations :none}}}}
@@ -81,7 +81,7 @@
                      :source-paths ["src/front"]
                      :target-path "target/front"
                      :test-paths ["test/front"]
-                     :resource-paths ["resources/front"]}
+                     }
              :back {;; Dependencies
                     :dependencies [[compojure "1.5.1"]
                                    [ring/ring-defaults "0.2.1"]]
@@ -93,7 +93,6 @@
                     :source-paths ["src/back"]
                     :target-path "target/back"
                     :test-paths ["test/back"]
-                    :resource-paths ["resources/back"]
 
                     ;; Other
                     :ring {:handler {{name}}.core/main}}})

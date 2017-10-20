@@ -2,5 +2,5 @@
 .*.swp
 *.log
 target
-resources/front/test
-resources/front/public/js/compiled
+resources/test
+resources/public/js/compiled

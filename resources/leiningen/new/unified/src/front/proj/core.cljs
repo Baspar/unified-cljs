@@ -1,14 +1,22 @@
 (ns {{name}}.core
   (:require
-   [rum.core :refer [defc mount]]
-   [{{name}}.common.core :refer [hello-world]])
+    [rum.core :refer [defc mount]]
+    [kvlt.chan :refer [request!]]
+    [{{name}}.common.core :refer [hello-world]])
   (:require-macros
-   [devcards.core :refer [defcard deftest]]))
+    [cljs.core.async.macros :refer [go]]
+    [devcards.core :refer [defcard]]))
 
 (enable-console-print!)
 
 (defc first-component []
-  [:div hello-world])
+  [:div
+   [:button {:on-click #(go
+                          (let [res (<! (request! {:url "/api"
+                                                   :method :get}))]
+                            (println res)))}
+    "Click to test the back-end connection"]
+   [:div hello-world]])
 
 (defcard first-card
   (first-component))

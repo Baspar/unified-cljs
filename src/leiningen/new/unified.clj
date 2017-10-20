@@ -11,9 +11,9 @@
               :sanitized (name-to-path name)}]
     (main/info "Generating fresh 'lein new' unified project.")
     (->files data
-             ["resources/front/public/cards.html" (render "resources/front/public/cards.html" data)]
-             ["resources/front/public/index.html" (render "resources/front/public/index.html" data)]
-             ["resources/front/public/css/{{sanitized}}_style.css" (render "resources/front/public/css/proj_style.css" data)]
+             ["resources/public/cards.html" (render "resources/public/cards.html" data)]
+             ["resources/public/index.html" (render "resources/public/index.html" data)]
+             ["resources/public/css/{{sanitized}}_style.css" (render "resources/public/css/proj_style.css" data)]
              ["test/common/test/common/core.cljc" (render "test/common/test/common/core.cljc" data)]
              ["test/back/test/core.clj" (render "test/back/test/core.clj" data)]
              ["test/front/test/core.cljs" (render "test/front/test/core.cljs" data)]

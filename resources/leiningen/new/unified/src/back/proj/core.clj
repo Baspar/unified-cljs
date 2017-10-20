@@ -5,7 +5,8 @@
             [{{name}}.common.core :refer [hello-world]]))
 
 (defroutes app-routes
-  (GET "/" [] hello-world)
+  (GET "/api" [] hello-world)
+  (route/resources "/")
   (route/not-found "Not Found"))
 
 (def main

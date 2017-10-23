@@ -15,3 +15,39 @@
 ### Backend
 - `lein back`: Launch backend in dev
 - `lein test-back`: Launch backend tests
+
+## Architecture
+```
+├── project.clj ---------------------->
+├── README.md ------------------------>
+├── resources
+│   └── public
+│       ├── cards.html --------------->
+│       ├── css
+│       │   └── style.css ------------>
+│       └── index.html --------------->
+├── src
+│   ├── back
+│   │   └── {{sanitized}}
+│   │       └── core.clj ------------->
+│   ├── common
+│   │   └── {{sanitized}}
+│   │       └── common
+│   │           └── core.cljc -------->
+│   └── front
+│       └── {{sanitized}}
+│           ├── core.cljs ------------>
+│           └── core_devcards.cljs --->
+└── test
+    ├── back
+    │   └── test
+    │       └── core.clj ------------->
+    ├── common
+    │   └── test
+    │       └── common
+    │           └── core.cljc -------->
+    └── front
+        └── test
+            ├── core.cljs ------------>
+            └── runner.cljs ---------->
+```

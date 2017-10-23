@@ -40,10 +40,10 @@
             "build-frontend" ["with-profile" "front" "cljsbuild" "once" "prod"]}
 
   ;; Other
-  :cljsbuild {:builds {:devcards {:source-paths ["src/front" "src/common"]
+  :cljsbuild {:builds {:devcards {:source-paths ["src/front" "src/common" "test/front" "test/common"]
                                   :figwheel {:devcards true
                                              :open-urls ["http://localhost:3449/cards.html"]}
-                                  :compiler {:main       "{{name}}.core"
+                                  :compiler {:main       "{{name}}.core-devcards"
                                              :asset-path "js/compiled/devcards_out"
                                              :output-to  "resources/public/js/compiled/{{sanitized}}_devcards.js"
                                              :output-dir "resources/public/js/compiled/devcards_out"
@@ -64,7 +64,7 @@
                               :compiler {:output-to "resources/test/compiled.js"
                                          :output-dir "resources/test/out"
                                          :pretty-print true
-                                         :main test.core
+                                         :main test.runner
                                          :optimizations :none}}}}
 
   ;; Profiles

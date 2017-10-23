@@ -1,5 +1,6 @@
 (ns test.common.core
-  (:require #?(:cljs [cljs.test :refer [deftest is]]
+  #?(:cljs (:require-macros [devcards.core :refer [deftest]]))
+  (:require #?(:cljs [cljs.test :refer [is]]
                :clj [clojure.test :refer [deftest is]])))
 
 (deftest dummy-test-common

@@ -44,6 +44,8 @@
                                   :figwheel {:devcards true
                                              :open-urls ["http://localhost:3449/cards.html"]}
                                   :compiler {:main       "{{name}}.core-devcards"
+                                             ;; Uncomment this line to disable test integration in DevCards
+                                             ;; :main       "{{name}}.core"
                                              :asset-path "js/compiled/devcards_out"
                                              :output-to  "resources/public/js/compiled/{{sanitized}}_devcards.js"
                                              :output-dir "resources/public/js/compiled/devcards_out"
@@ -80,8 +82,7 @@
                      ;; Paths
                      :source-paths ["src/front"]
                      :target-path "target/front"
-                     :test-paths ["test/front"]
-                     }
+                     :test-paths ["test/front"]}
              :back {;; Dependencies
                     :dependencies [[compojure "1.5.1"]
                                    [ring/ring-defaults "0.2.1"]]

@@ -26,7 +26,7 @@
 ├── dev
 │   └── {{sanitized}}
 │       └── dev
-            ├── test_runner.cljs -----> Frontend Test Runner
+│           ├── test_runner.cljs -----> Frontend Test Runner
 │           └── core.cljs ------------> Frontend Main File (for devcards build)
 ├── resources
 │   └── public

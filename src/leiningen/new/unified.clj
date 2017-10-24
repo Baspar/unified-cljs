@@ -13,7 +13,7 @@
     (->files data
              ["resources/public/cards.html" (render "resources/public/cards.html" data)]
              ["resources/public/index.html" (render "resources/public/index.html" data)]
-             ["resources/public/css/{{sanitized}}_style.css" (render "resources/public/css/proj_style.css" data)]
+             ["resources/public/css/style.css" (render "resources/public/css/style.css" data)]
              ["test/common/test/common/core.cljc" (render "test/common/test/common/core.cljc" data)]
              ["test/back/test/core.clj" (render "test/back/test/core.clj" data)]
              ["test/front/test/core.cljs" (render "test/front/test/core.cljs" data)]

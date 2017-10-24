@@ -1,9 +1,11 @@
 # Unified Template for {{name}} Project
 ## Prerequisites
+- [rlwrap](https://github.com/hanslub42/rlwrap): Helper to allows Special interaction with the REPL (Optional)
 - [Leiningen](https://leiningen.org): Tool for a peaceful Clojure(Script) environment.
 - [PhantomJS](http://phantomjs.org): Javascript library for Unit Testing. Used for Frontend Unit Testing.
 
 ## Main commands
+*Note*: You can add `rlwrap` in front of every command to get additional features (Backspace, history, ...)
 ### Generic
 - `lein clean`: clean the project
 
@@ -16,38 +18,39 @@
 - `lein back`: Launch backend in dev
 - `lein test-back`: Launch backend tests
 
+
 ## Architecture
 ```
-├── project.clj ---------------------->
-├── README.md ------------------------>
+├── project.clj ----------------------> Project
+├── README.md ------------------------> The file you're currently reading
 ├── resources
 │   └── public
-│       ├── cards.html --------------->
 │       ├── css
 │       │   └── style.css ------------>
-│       └── index.html --------------->
+│       ├── cards.html ---------------> HTML Main File (for devcards build)
+│       └── index.html ---------------> HTML Main File (for dev/prod build)
 ├── src
 │   ├── back
 │   │   └── {{sanitized}}
-│   │       └── core.clj ------------->
+│   │       └── core.clj -------------> Backend Main File
 │   ├── common
 │   │   └── {{sanitized}}
 │   │       └── common
-│   │           └── core.cljc -------->
+│   │           └── core.cljc --------> Common example file
 │   └── front
 │       └── {{sanitized}}
-│           ├── core.cljs ------------>
-│           └── core_devcards.cljs --->
+│           ├── core.cljs ------------> Frontend Main File (for dev/prod build)
+│           └── core_devcards.cljs ---> Frontend Main File (for devcards build)
 └── test
     ├── back
     │   └── test
-    │       └── core.clj ------------->
+    │       └── core.clj -------------> Backend Main Test
     ├── common
     │   └── test
     │       └── common
-    │           └── core.cljc -------->
+    │           └── core.cljc --------> Common Main Test
     └── front
         └── test
-            ├── core.cljs ------------>
-            └── runner.cljs ---------->
+            ├── core.cljs ------------> Frontend Main Test
+            └── runner.cljs ----------> Frontend Test Runner
 ```

@@ -23,10 +23,15 @@
 ```
 ├── project.clj ----------------------> Project
 ├── README.md ------------------------> The file you're currently reading
+├── dev
+│   └── {{sanitized}}
+│       └── dev
+            ├── test_runner.cljs -----> Frontend Test Runner
+│           └── core.cljs ------------> Frontend Main File (for devcards build)
 ├── resources
 │   └── public
 │       ├── css
-│       │   └── style.css ------------>
+│       │   └── style.css ------------> Main Stylesheet
 │       ├── cards.html ---------------> HTML Main File (for devcards build)
 │       └── index.html ---------------> HTML Main File (for dev/prod build)
 ├── src
@@ -39,8 +44,7 @@
 │   │           └── core.cljc --------> Common example file
 │   └── front
 │       └── {{sanitized}}
-│           ├── core.cljs ------------> Frontend Main File (for dev/prod build)
-│           └── core_devcards.cljs ---> Frontend Main File (for devcards build)
+│           └── core.cljs ------------> Frontend Main File
 └── test
     ├── back
     │   └── test
@@ -51,6 +55,5 @@
     │           └── core.cljc --------> Common Main Test
     └── front
         └── test
-            ├── core.cljs ------------> Frontend Main Test
-            └── runner.cljs ----------> Frontend Test Runner
+            └── core.cljs ------------> Frontend Main Test
 ```

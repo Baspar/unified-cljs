@@ -40,33 +40,33 @@
             "build-frontend" ["with-profile" "front" "cljsbuild" "once" "prod"]}
 
   ;; Other
-  :cljsbuild {:builds {:devcards {:source-paths ["src/front" "src/common" "test/front" "test/common"]
+  :cljsbuild {:builds {:devcards {:source-paths ["src/front" "src/common" "test/front" "test/common" "dev"]
                                   :figwheel {:devcards true
                                              :open-urls ["http://localhost:3449/cards.html"]}
-                                  :compiler {:main       "{{name}}.core-devcards"
+                                  :compiler {:main       "{{name}}.dev.core"
                                              ;; Uncomment this line to disable test integration in DevCards
                                              ;; :main       "{{name}}.core"
                                              :asset-path "js/compiled/devcards_out"
                                              :output-to  "resources/public/js/compiled/{{sanitized}}_devcards.js"
                                              :output-dir "resources/public/js/compiled/devcards_out"
-                                             :source-map-timestamp true }}
-                       :dev {:source-paths ["src/front" "src/common"]
+                                             :source-map-timestamp true}}
+                       :dev {:source-paths ["src/front" "src/common" "test/front" "test/common" "dev"]
                              :figwheel true
-                             :compiler {:main       "{{name}}.core"
+                             :compiler {:main       "{{name}}.dev.core"
                                         :asset-path "js/compiled/out"
                                         :output-to  "resources/public/js/compiled/{{sanitized}}.js"
                                         :output-dir "resources/public/js/compiled/out"
-                                        :source-map-timestamp true }}
+                                        :source-map-timestamp true}}
                        :prod {:source-paths ["src/front" "src/common"]
                               :compiler {:main       "{{name}}.core"
                                          :asset-path "js/compiled/out"
                                          :output-to  "resources/public/js/compiled/{{sanitized}}.js"
                                          :optimizations :advanced}}
-                       :test {:source-paths ["src/front" "src/common" "test/front" "test/common"]
+                       :test {:source-paths ["src/front" "src/common" "test/front" "test/common" "dev"]
                               :compiler {:output-to "resources/test/compiled.js"
                                          :output-dir "resources/test/out"
                                          :pretty-print true
-                                         :main test.runner
+                                         :main {{name}}.dev.test-runner
                                          :optimizations :none}}}}
 
   ;; Profiles

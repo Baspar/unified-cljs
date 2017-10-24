@@ -17,11 +17,11 @@
              ["test/common/test/common/core.cljc" (render "test/common/test/common/core.cljc" data)]
              ["test/back/test/core.clj" (render "test/back/test/core.clj" data)]
              ["test/front/test/core.cljs" (render "test/front/test/core.cljs" data)]
-             ["test/front/test/runner.cljs" (render "test/front/test/runner.cljs" data)]
              ["src/common/{{sanitized}}/common/core.cljc" (render "src/common/proj/common/core.cljc" data)]
              ["src/back/{{sanitized}}/core.clj" (render "src/back/proj/core.clj" data)]
              ["src/front/{{sanitized}}/core.cljs" (render "src/front/proj/core.cljs" data)]
-             ["src/front/{{sanitized}}/core_devcards.cljs" (render "src/front/proj/core_devcards.cljs" data)]
+             ["dev/{{sanitized}}/dev/test_runner.cljs"  (render "dev/proj/dev/test_runner.cljs" data)]
+             ["dev/{{sanitized}}/dev/devcards.cljs" (render "dev/proj/dev/devcards.cljs" data)]
              ["README.md" (render "README.md" data)]
              [".gitignore" (render ".gitignore" data)]
              ["project.clj" (render "project.clj" data)])))

@@ -1,4 +1,4 @@
-(ns {{name}}.core-devcards
+(ns {{name}}.dev.core
   (:require [test.core]
             [{{name}}.core]))
 

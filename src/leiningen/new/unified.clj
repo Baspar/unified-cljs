@@ -21,7 +21,7 @@
              ["src/back/{{sanitized}}/core.clj" (render "src/back/proj/core.clj" data)]
              ["src/front/{{sanitized}}/core.cljs" (render "src/front/proj/core.cljs" data)]
              ["dev/{{sanitized}}/dev/test_runner.cljs"  (render "dev/proj/dev/test_runner.cljs" data)]
-             ["dev/{{sanitized}}/dev/devcards.cljs" (render "dev/proj/dev/devcards.cljs" data)]
+             ["dev/{{sanitized}}/dev/core.cljs" (render "dev/proj/dev/core.cljs" data)]
              ["README.md" (render "README.md" data)]
              [".gitignore" (render ".gitignore" data)]
              ["project.clj" (render "project.clj" data)])))

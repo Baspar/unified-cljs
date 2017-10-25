@@ -24,4 +24,6 @@
              ["dev/{{sanitized}}/dev/core.cljs" (render "dev/proj/dev/core.cljs" data)]
              ["README.md" (render "README.md" data)]
              [".gitignore" (render ".gitignore" data)]
-             ["project.clj" (render "project.clj" data)])))
+             ["project.clj" (render "project.clj" data)]
+             ["test.sh" (render "test.sh" data)]
+             [".travis.yml" (render ".travis.yml" data)])))

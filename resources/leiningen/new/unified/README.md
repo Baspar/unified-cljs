@@ -23,6 +23,8 @@
 ```
 ├── project.clj ----------------------> Project
 ├── README.md ------------------------> The file you're currently reading
+├── test.sh --------------------------> Test Script for CI/CD
+├── .travis.yml ----------------------> TravisCI configuration file
 ├── dev
 │   └── {{sanitized}}
 │       └── dev

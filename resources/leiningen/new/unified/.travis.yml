@@ -1,0 +1,6 @@
+language: clojure
+env:
+  matrix:
+    - TARGET=front
+    - TARGET=back
+script: bash test.sh

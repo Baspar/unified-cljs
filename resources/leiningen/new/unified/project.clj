@@ -17,7 +17,8 @@
                  [org.clojure/core.async "0.3.443"]]
 
   ;; Common plugins
-  :plugins [[lein-doo "0.1.7"]]
+  :plugins [[lein-doo "0.1.7"]
+            [jonase/eastwood "0.2.5"]]
 
   ;; Common paths
   :source-paths ["src/common"]
@@ -35,6 +36,11 @@
             "test-backend" ["with-profile" "back" "test"]
             "test-front" "test-frontend"
             "test-frontend" ["with-profile" "front" "doo" "phantom" "test" "once"]
+            ;; Lint
+            "lint-front" "lint-frontend"
+            "lint-frontend" ["with-profile" "front" "eastwood"]
+            "lint-back" "lint-backend"
+            "lint-backend" ["with-profile" "back" "eastwood"]
             ;; Prod
             "build-front" "build-frontend"
             "build-frontend" ["with-profile" "front" "cljsbuild" "once" "prod"]}

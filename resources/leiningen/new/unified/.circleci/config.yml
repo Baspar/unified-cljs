@@ -1,0 +1,26 @@
+version: 2
+jobs:
+  front:
+    docker:
+      - image: cmeter/clojure-phantomjs
+    environment:
+      TARGET: "front"
+    steps:
+      - checkout
+      - run: bash test.sh
+
+  back:
+    docker:
+      - image: circleci/clojure:lein-2.7.1
+    environment:
+      TARGET: "back"
+    steps:
+      - checkout
+      - run: bash test.sh
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - back
+      - front

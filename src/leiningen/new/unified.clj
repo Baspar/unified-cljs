@@ -26,4 +26,6 @@
              [".gitignore" (render ".gitignore" data)]
              ["project.clj" (render "project.clj" data)]
              ["test.sh" (render "test.sh" data)]
-             [".travis.yml" (render ".travis.yml" data)])))
+             [".travis.yml" (render ".travis.yml" data)]
+             [".circleci/config.yml" (render ".circleci/config.yml" data)]
+             )))

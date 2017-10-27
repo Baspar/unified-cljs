@@ -11,11 +11,11 @@
 
 (enable-console-print!)
 
+;; Actions
 (defaction first-action
   "Increment the counter"
   [m]
   (update m :counter inc))
-
 (defaction! first-action
   "Dispatch [:first-action] after 1s"
   [state]
@@ -23,6 +23,7 @@
     (<! (timeout 1000))
     (dispatch! state :first-action)))
 
+;; Component
 (defc first-component [state]
   [:div
    [:div
@@ -35,13 +36,22 @@
    [:div
     [:button {:on-click #(dispatch! state [! :first-action])} "Call [! :first-action]"]]])
 
+;; Devcard
 (defcard first-card
   (fn [state] (first-component state))
   {}
   {:inspect-data true})
 
-(defn main []
+;; Main function
+(defn render-fn [state]
   (if-let [node (.getElementById js/document "main-app-area")]
-    (mount (first-component) node)))
+    (mount (first-component state) node)))
 
-(main)
+;; Main State
+(defonce app-state (atom {}))
+(add-watch app-state
+           :rendering
+           (fn [_ state old-state new-state]
+             (render-fn state)))
+
+(render-fn state)

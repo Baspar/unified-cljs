@@ -5,4 +5,4 @@
 
 (bind-actions-list)
 
-;; /!\ This file won't be available when compiling in Dev/DevCards /!\
+;; /!\ This file won't be available when compiling in Prod /!\

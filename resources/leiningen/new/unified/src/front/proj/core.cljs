@@ -1,7 +1,9 @@
 (ns {{name}}.core
   (:require
     [rum.core :refer [defc mount]]
+    [reaction.core :refer-macros [defaction defaction! dispatch!]]
     [kvlt.chan :refer [request!]]
+    [cljs.core.async :refer [timeout]]
     [{{name}}.common.core :refer [hello-world]])
   (:require-macros
     [cljs.core.async.macros :refer [go]]
@@ -9,17 +11,34 @@
 
 (enable-console-print!)
 
-(defc first-component []
+(defaction first-action
+  "Increment the counter"
+  [m]
+  (update m :counter inc))
+
+(defaction! first-action
+  "Dispatch [:first-action] after 1s"
+  [state]
+  (go
+    (<! (timeout 1000))
+    (dispatch! state :first-action)))
+
+(defc first-component [state]
   [:div
-   [:button {:on-click #(go
-                          (let [res (<! (request! {:url "/api"
-                                                   :method :get}))]
-                            (println res)))}
-    "Click to test the back-end connection"]
-   [:div hello-world]])
+   [:div
+    [:button {:on-click #(go
+                           (let [res (<! (request! {:url "/api"
+                                                    :method :get}))]
+                             (println res)))}
+     "Click to test the back-end connection"]
+    [:div hello-world]]
+   [:div
+    [:button {:on-click #(dispatch! state [! :first-action])} "Call [! :first-action]"]]])
 
 (defcard first-card
-  (first-component))
+  (fn [state] (first-component state))
+  {}
+  {:inspect-data true})
 
 (defn main []
   (if-let [node (.getElementById js/document "main-app-area")]

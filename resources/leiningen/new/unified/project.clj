@@ -79,6 +79,7 @@
   :profiles {:front {;; Dependencies
                      :dependencies [[org.clojure/clojurescript "1.9.229"]
                                     [devcards "0.2.3"]
+                                    [reaction "0.1.1"]
                                     [rum "0.10.8"]]
 
                      ;; Plugins

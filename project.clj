@@ -1,4 +1,4 @@
-(defproject unified/lein-template "0.3.7"
+(defproject unified/lein-template "0.3.8"
   :description "FIXME: write description"
   :url "http://example.com/FIXME"
   :license {:name "Eclipse Public License"
